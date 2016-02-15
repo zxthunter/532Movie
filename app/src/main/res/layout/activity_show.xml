@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:visibility="invisible"
+    android:id="@+id/main">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="false"
+        >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainContent" android:background="#ffffff">
+        <RelativeLayout
+            android:id="@+id/uperContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    <com.facebook.drawee.view.SimpleDraweeView  android:id="@+id/image"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        fresco:viewAspectRatio="0.645"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="12dp">
+
+        </com.facebook.drawee.view.SimpleDraweeView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:paddingTop="13dp"
+        android:layout_alignTop="@+id/image"
+        android:layout_toRightOf="@id/image"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
+        android:textColor="#181818"
+        android:maxWidth="220dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/actor"
+        android:maxWidth="220dp"
+        android:singleLine="true"
+        android:textColor="#181818"
+        android:layout_below="@+id/title"
+        android:layout_alignLeft="@+id/title"
+        android:layout_alignParentRight="true"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true" android:id="@+id/director" android:layout_below="@+id/actor"
+        android:layout_alignLeft="@+id/actor"
+        android:textColor="#181818"
+        android:layout_alignParentRight="true"
+        android:maxWidth="220dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true" android:id="@+id/writer" android:layout_below="@+id/director"
+        android:layout_alignLeft="@+id/director"
+        android:textColor="#181818"
+        android:layout_alignParentRight="true"
+        android:maxWidth="220dp"/>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true" android:id="@+id/area" android:layout_below="@+id/writer"
+            android:layout_alignLeft="@+id/writer"
+            android:layout_alignParentRight="true"
+            android:textColor="#181818"
+            android:maxWidth="220dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true" android:id="@+id/language" android:layout_below="@+id/area"
+            android:layout_alignLeft="@+id/area"
+            android:layout_alignParentRight="true"
+            android:textColor="#181818"
+            android:maxWidth="220dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/duration"
+            android:layout_below="@+id/language"
+            android:layout_alignLeft="@+id/language"
+            android:textColor="#181818"
+            android:layout_alignParentRight="true"
+            android:maxWidth="220dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pubdate"
+            android:layout_below="@+id/duration"
+            android:textColor="#181818"
+            android:layout_alignLeft="@+id/duration"
+            android:layout_alignParentRight="true"
+            android:maxWidth="220dp"/>
+            <RelativeLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_below="@+id/image"
+                android:layout_alignLeft="@+id/image" android:layout_marginTop="2dp" android:translationX="5dp">
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="true"
+                    style="@style/MyRatingBar"
+                    android:paddingBottom="5dp"
+                    android:numStars="5"
+                    android:stepSize="0.025"
+                    />
+                <TextView
+                    android:id="@+id/score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/ratingBar"
+                    android:textColor="#E02E2E"
+                    android:textSize="18dp"
+                    android:paddingLeft="2dp"
+
+                    android:layout_alignBottom="@id/ratingBar"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/score"
+                    android:textColor="#181818"
+                    android:textSize="15dp"
+                    android:layout_alignBottom="@id/score"
+                    android:text="分"></TextView>
+            </RelativeLayout>
+        </RelativeLayout>
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tagProfile"
+        android:layout_below="@+id/uperContent"
+        android:textColor="#181818"
+        android:textSize="20dp"
+        android:text="剧情简介："
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile"
+        android:layout_below="@+id/tagProfile"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+        <LinearLayout
+            android:id="@+id/episode_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_below="@id/profile"  android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" android:layout_marginTop="5dp" android:orientation="vertical">
+            <TextView android:id="@+id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#181818" android:textSize="20dp"
+                android:text="播放列表："/>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+
+
+                ></android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

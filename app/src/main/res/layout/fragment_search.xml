@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:id="@+id/newConten3" >
+        <RelativeLayout android:id="@+id/findNewView" android:visibility="gone"
+            android:layout_height="wrap_content" android:layout_width="fill_parent"
+            android:paddingRight="10px" android:paddingLeft="10px"
+            android:paddingTop="8px"
+            >
+            <EditText android:id="@+id/findNewEdit" android:layout_height="42dp"
+                android:layout_width="fill_parent"
+                android:layout_toLeftOf="@+id/findNewButton"
+                android:singleLine="true"
+                android:background="@drawable/textedit_style"
+                ></EditText>
+            <Button
+                android:id="@+id/findNewButton"
+                android:layout_width="50dp"
+                android:layout_height="42dp"
+                android:layout_alignParentRight="true"
+                android:text="搜索"
+                android:textColor="#FFFFFF"
+                android:background="#BA7F45">
+            </Button>
+        </RelativeLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+    <RelativeLayout android:id="@+id/findPreView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" android:orientation="vertical" android:translationY="-60dp">
+        <ImageView android:id="@+id/logo532" android:src="@mipmap/logo532" android:layout_height="100dp" android:layout_width="100dp" android:layout_centerHorizontal="true"></ImageView>
+        <RelativeLayout android:layout_height="wrap_content" android:layout_width="300dp" android:layout_below="@+id/logo532">
+            <EditText android:id="@+id/findOldEdit" android:layout_height="42dp"
+                android:layout_width="250dp" android:singleLine="true"
+                android:background="@drawable/textedit_style"></EditText>
+            <Button
+                android:id="@+id/findOldButton"
+                android:layout_width="50dp"
+                android:layout_height="42dp"
+                android:layout_toRightOf="@+id/findOldEdit"
+                android:text="搜索"
+                android:textColor="#FFFFFF"
+                android:background="#BA7F45">
+            </Button>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <ImageView android:layout_height="100dp" android:layout_width="100dp" android:src="@mipmap/loading" android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" android:id="@+id/loadingLogo" android:visibility="invisible" >
+
+    </ImageView>
+</RelativeLayout>

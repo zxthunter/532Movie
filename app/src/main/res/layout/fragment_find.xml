@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@android:id/tabhost">
+    <LinearLayout android:layout_width="fill_parent"
+        android:orientation="vertical" android:layout_height="fill_parent">
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ></TabWidget>
+        </HorizontalScrollView>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:id="@android:id/tabcontent">
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical" android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:id="@+id/content">
+            </LinearLayout>
+        </FrameLayout>
+
+        <com.hunter.movie532_02.widget.IndexViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            </com.hunter.movie532_02.widget.IndexViewPager>
+
+    </LinearLayout>
+</TabHost>
