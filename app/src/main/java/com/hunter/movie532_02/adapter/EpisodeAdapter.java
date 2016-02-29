@@ -34,6 +34,12 @@ public class EpisodeAdapter extends RecyclerView.Adapter<EpisodeAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        if (getItemCount() == 1)
+        {
+            holder.button.setText("全集");
+            holder.setOnClickListener(new OnEpisodeClickListener(UrlConstant.playBaseUrl+list.get(position),recyclerView.getContext()));
+            return;
+        }
         holder.button.setText("第"+(position+1)+"集");
         holder.setOnClickListener(new OnEpisodeClickListener(UrlConstant.playBaseUrl+list.get(position),recyclerView.getContext()));
     }

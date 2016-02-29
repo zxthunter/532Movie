@@ -6,6 +6,7 @@ import java.util.HashMap;
  * Created by zxt on 2016/1/31.
  */
 public class HeaderConstant {
+    public static int NUMBER_OF_MOVIE_PER_COLUMN = 6 ;
     private static HashMap<String,String> channelMap = null;
     static {
         channelMap = new HashMap<String,String>();

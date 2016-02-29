@@ -2,17 +2,16 @@ package com.hunter.movie532_02.adapter;
 
 import android.content.Context;
 import android.net.Uri;
-import android.preference.PreferenceActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.hunter.movie532_02.R;
 import com.hunter.movie532_02.bean.ShowMovie;
+import com.hunter.movie532_02.constants.HeaderConstant;
 import com.hunter.movie532_02.listener.OnMovieClickListener;
 
 import java.util.ArrayList;
@@ -43,7 +42,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
     @Override
     public int getItemViewType(int position) {
-        return position % 7 == 0 ? ITEM_VIEW_TYPE_HEADER : ITEM_VIEW_TYPE_ITEM;
+        return position % (HeaderConstant.NUMBER_OF_MOVIE_PER_COLUMN +1) == 0 ? ITEM_VIEW_TYPE_HEADER : ITEM_VIEW_TYPE_ITEM;
     }
 
     @Override

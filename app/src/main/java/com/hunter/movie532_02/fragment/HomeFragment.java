@@ -51,14 +51,14 @@ public class HomeFragment extends Fragment {
             gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
                 @Override
                 public int getSpanSize(int position) {
-                    return position % 7 == 0 ? 3 : 1;
+                    return position % (HeaderConstant.NUMBER_OF_MOVIE_PER_COLUMN +1) == 0 ? 3 : 1;
                 }
             });
             recyclerView.setLayoutManager(gridLayoutManager);
 
             homeAdapter = new HomeAdapter(movieList);
             recyclerView.setAdapter(homeAdapter);
-            final String urlString = UrlConstant.apiBaseUrl + "index";
+            final String urlString = UrlConstant.apiBaseUrl + "index/count/"+HeaderConstant.NUMBER_OF_MOVIE_PER_COLUMN;
             client.post(urlString, new AsyncHttpResponseHandler() {
 
                 @Override
@@ -91,6 +91,10 @@ public class HomeFragment extends Fragment {
         final Type type = new TypeToken<Map<String, ArrayList<ShowMovie>>>() {
         }.getType();
         movieMap = new Gson().fromJson(s, type);
+        //TODO:Pass the test of android market
+        if (movieMap.get("popular").size() < HeaderConstant.NUMBER_OF_MOVIE_PER_COLUMN)
+            HeaderConstant.NUMBER_OF_MOVIE_PER_COLUMN = movieMap.get("popular").size();
+
         for (String key : movieMap.keySet()){
             homeAdapter.addHeader(HeaderConstant.parseChannelName(key));
             homeAdapter.addAll(movieMap.get(key));
@@ -100,7 +104,7 @@ public class HomeFragment extends Fragment {
 
         @Override
         public void onRefresh(final MaterialRefreshLayout materialRefreshLayout) {
-            final String urlString = UrlConstant.apiBaseUrl + "index";
+            final String urlString = UrlConstant.apiBaseUrl + "index/count/"+HeaderConstant.NUMBER_OF_MOVIE_PER_COLUMN;
             client.post(urlString, new AsyncHttpResponseHandler() {
 
                 @Override

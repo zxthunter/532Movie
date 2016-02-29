@@ -5,13 +5,13 @@
 <TextView
     android:paddingTop="2dp"
     android:id="@+id/text"
-    android:layout_width="80dp"
-    android:textSize="20dp"
+    android:layout_width="@dimen/tab_findTextWidth"
+    android:textSize="@dimen/tab_findTextSize"
     android:layout_height="wrap_content"
     android:gravity="center"/>
     <ImageView
         android:layout_below="@+id/text"
-        android:layout_width="65dp"
+        android:layout_width="@dimen/tab_findImageWidth"
         android:layout_height="10dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/tab_indicator"/>

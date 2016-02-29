@@ -165,6 +165,7 @@ public class FindFragment extends Fragment{
                 final Type type = new TypeToken<InfoBean>() {
                 }.getType();
                 InfoBean infoBean = new Gson().fromJson(s, type);
+                if (infoBean == null) return;
                 ArrayList<ShowMovie> videos = infoBean.getVideos();
                 adapterArrayList.get(tabIndex).addAll(videos);
                 earlistTimeList.set(tabIndex, videos.get(videos.size() - 1).getAddtime());
@@ -202,6 +203,7 @@ public class FindFragment extends Fragment{
                     final Type type = new TypeToken<InfoBean>() {
                     }.getType();
                     InfoBean infoBean = new Gson().fromJson(s, type);
+                    if (infoBean == null) return;
                     ArrayList<ShowMovie> videos = infoBean.getVideos();
                     adapterArrayList.get(tabIndex).clearAll();
                     adapterArrayList.get(tabIndex).addAll(videos);
@@ -247,6 +249,10 @@ public class FindFragment extends Fragment{
                         return;
                     }
                     InfoBean infoBean = new Gson().fromJson(s, type);
+                    if (infoBean == null) {
+                        materialRefreshLayout.finishRefreshLoadMore();
+                        return;
+                    }
                     ArrayList<ShowMovie> videos = infoBean.getVideos();
                     earlistTimeList.set(tabIndex, videos.get(videos.size() - 1).getAddtime());
                     adapter.addAll(videos);
